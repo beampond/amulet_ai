@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'screens/scanner_page.dart';
+import 'screens/login_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Amulet Scanner',
-      theme: ThemeData.dark(),
-      home: const ScannerPage(),
+      title: 'Amulet AI',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(0xFF0D0D0D),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFFC9A84C),
+        ),
+      ),
+      home: const LoginPage(),
     );
   }
 }
